@@ -10,3 +10,5 @@ RoxygenNote: 7.2.3
 Authors@R: 
     person("Sebastian Camilo", "Loos", , "seba.loos@hotmail.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-8830-1734"))
+URL: https://github.com/openwashdata/grdwtrsmpkwale
+BugReports: https://github.com/openwashdata/grdwtrsmpkwale/issues
