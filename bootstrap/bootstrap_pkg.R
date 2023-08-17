@@ -11,10 +11,11 @@ library(usethis)
 # To do so simply add multiple use_author() calls here.
 
 use_author(
-  given = "Donald",
-  family = "Duck",
-  role = "aut",
-  comment = c(ORCID = "YOUR-ORCID-ID")
+  given = "Sebastian Camilo",
+  family = "Loos",
+  role = c("cre", "aut"),
+  email = "seba.loos@hotmail.com",
+  comment = c(ORCID = "0000-0002-8830-1734")
   )
 
 # or read as a bulk import of multiple authors from a .csv file.
