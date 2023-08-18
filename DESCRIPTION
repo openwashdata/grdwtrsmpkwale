@@ -12,3 +12,6 @@ Authors@R:
            comment = c(ORCID = "0000-0002-8830-1734"))
 URL: https://github.com/openwashdata/grdwtrsmpkwale
 BugReports: https://github.com/openwashdata/grdwtrsmpkwale/issues
+Depends: 
+    R (>= 2.10)
+LazyData: true

@@ -34,7 +34,7 @@ samples_june_raw <- read_excel(here::here("data-raw", "samples.xlsx"),
                                sheet = "Water Chemistry data June 2016",
                                .name_repair = "unique")
 
-samples_selection_raw <- read_excel(here::here("data-raw", "samples.xlsx"),
+selected_samples_raw <- read_excel(here::here("data-raw", "samples.xlsx"),
                                     sheet = "Selected points sampled weekly",
                                     .name_repair = "unique")
 
@@ -47,7 +47,7 @@ periodic_data <- periodicTable |> select(c(numb:name))
 
 samples_march_raw |> skimr::skim()
 samples_june_raw |> skimr::skim()
-samples_selection_raw |> skimr::skim()
+selected_samples_raw |> skimr::skim()
 
 # tidy data ---------------------------------------------------------------
 tmap_mode("view")
@@ -143,43 +143,65 @@ sf_june <- st_as_sf(samples_june, coords = c("utm_x", "utm_y"), crs = 32737) |>
   st_transform(crs = 4236)
 
 
-samples_joined <- samples_march |> full_join(samples_june)
+water_samples <- samples_march |> full_join(samples_june)
 
-sf_joined <- st_as_sf(samples_joined, coords = c("utm_x", "utm_y"), crs = 32737) |>
+sf_samples <- st_as_sf(water_samples, coords = c("utm_x", "utm_y"), crs = 32737) |>
   st_transform(crs = 4236)
 
-# tidy data for sampling in march of 2016
-samples_selection_raw
+## tidy data of selected locations that were collected weekly
 
-samples_selection <- samples_selection_raw |>
+selected_samples_raw <- selected_samples_raw |>
   mutate(code = Code...21, .before = everything()) |>
   select(!c(Code...1, Code...21)) |>
   rename(date = Data,
          conductivity = Cond.,
          T_avg = Tª)
 
+selected_samples <- selected_samples_raw |>
+  drop_na(date)
 
+selected_samples <-  selected_samples |>
+  mutate(across(.cols = c(Li:U),
+                .fns = ~ if_else(. == "<0,8" | . == "<0.8", "0.7999", .))) |>
+  mutate(across(.cols = c(PO4:Br),
+                .fns = ~ str_replace(., "<LOQ", "10.0000"))) |>
+  mutate_at(.vars = vars(conductivity:U),
+            .funs = as.numeric)
 
 # explore data ------------------------------------------------------------
 
 ## code to explore `DATASET` dataset goes here
 ## loops with "tidy data" section
 
+samples_march |> skimr::skim()
+samples_june |> skimr::skim()
+water_samples |> skimr::skim()
+selected_samples |> skimr::skim()
+
 qtm(sf_march)
 qtm(sf_june)
-qtm(sf_joined)
+qtm(sf_samples)
 
 
 # save data ------------------------------------------------------------
 
 ## code to save `DATASET` dataset goes here
 
-# create DATASET.rda in data directory
-usethis::use_data(DATASET, overwrite = TRUE)
+# DONE
+# create export files folder
 fs::dir_create(here::here("inst", "extdata"))
+
+# UPDATE
+# create DATASET.rda in data directory
+usethis::use_data(water_samples, selected_samples, overwrite = TRUE)
+
+# UPDATE
 # create export files for website
-write_csv(DATASET, here::here("inst", "extdata", "DATASET.csv"))
-openxlsx::write.xlsx(DATASET, here::here("inst", "extdata", "DATASET.xlsx"))
+write_csv(water_samples, here::here("inst", "extdata", "water_samples.csv"))
+openxlsx::write.xlsx(water_samples, here::here("inst", "extdata", "water_samples.xlsx"))
+
+write_csv(selected_samples, here::here("inst", "extdata", "selected_samples.csv"))
+openxlsx::write.xlsx(selected_samples, here::here("inst", "extdata", "selected_samples.xlsx"))
 
 # prepare dictionaries legacy -----------------------------------------------
 
