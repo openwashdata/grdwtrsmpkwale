@@ -267,15 +267,13 @@ openxlsx::write.xlsx(read_csv("data-raw/dictionary.csv"), "data-raw/dictionary.x
 
 # fill dictionary ---------------------------------------------------------
 
-dictionary <- get_variable_info(data = list(water_samples, selected_samples),
-                                directory = directories,
-                                file_name = file_names)
-
-dictionary <- dictionary |>
+# fixes wrong variable type info for datetime variables
+dictionary_raw <- dictionary_raw |>
   mutate(variable_type = if_else(variable_name == "date",
                                  str_replace(variable_name, "date", "dttm"),
                                  variable_type))
 
+## Quite ugly way to fill in the information about the unit type and error
 get_unit_info <- function(data, dictionary, file_name = "") {
   dataset <- data
   dictionary_temp <- dictionary
@@ -288,17 +286,8 @@ get_unit_info <- function(data, dictionary, file_name = "") {
     pivot_wider(names_from = variable_names) |>
     mutate(file_name = file_name, .before = everything())
 
-  ifelse("unit_type" %in% names(dictionary_temp),
-         dictionary_out <- left_join(dictionary_temp, dictionary_unit,
-                                     by = join_by(file_name,
-                                                  unit_type,
-                                                  error)),
-         dictionary_out <- left_join(dictionary_temp, dictionary_unit,
-                                     by = join_by(file_name, variable_name))
-                           )
-
-  # dictionary_out|>
-  #   mutate(description = description, .after = everything())
+  dictionary_out <- left_join(dictionary_temp, dictionary_unit,
+                              by = join_by(file_name, variable_name))
 
   return(dictionary_out)
 }
@@ -314,10 +303,7 @@ dictionary <- dictionary_water |>
                          dictionary_select$error,
                          error))
 
-# left_join(dictionary_water, dictionary_water,
-#           by = join_by(directory, file_name, variable_name, variable_type,
-#                        description, unit_type, error),
-#           multiple = "last") |> view()
+
 
 # Update export files
 dictionary |>
@@ -327,14 +313,6 @@ dictionary |>
   openxlsx::write.xlsx("data-raw/dictionary.xlsx")
 
 
-selected_samples_raw |>
-  slice_head(n = 2)
-
-dictionary |>
-  mutate(unit_type = )
-
-dictionary |>
-  mutate_at(element = )
 
 
 
