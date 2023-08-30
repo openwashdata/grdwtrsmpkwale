@@ -238,13 +238,13 @@ get_variable_info <- function(data, directory = "", file_name = "") {
 
 # Specify values for directory and file_name
 directories <- c("data/", "data/")
-file_names <- c("DATASET1.rda", "DATASET2.rda")
+file_names <- c("water_samples.rda", "selected_samples.rda")
 
-dictionary <- get_variable_info(data = list(DATASET1, DATASET2),
+dictionary <- get_variable_info(data = list(water_samples, selected_samples),
                                 directory = directories,
                                 file_name = file_names)
 
-# export files to fill in dictionary
+ # export files to fill in dictionary
 dictionary |>
   write_csv("data-raw/dictionary.csv")
 
@@ -262,10 +262,29 @@ use_dictionary_skeleton(data_location = NULL,
                         data_file_pattern = ".rda",
                         ignore_pattern = "codebook.Rda",
                         recursive = TRUE)
-# output: dictionary.csv file
+# output: dictionary.xlsx file
 openxlsx::write.xlsx(read_csv("data-raw/dictionary.csv"), "data-raw/dictionary.xlsx")
 
+# fill dictionary ---------------------------------------------------------
+
+dictionary <- dictionary |>
+  mutate(variable_type = if_else(variable_name == "date",
+                                 str_replace(variable_name, "date", "dttm"),
+                                 variable_type))
+
+samples_march_raw |>
+  slice_head(n = 2) |> view()
+
+selected_samples_raw |>
+  slice_head(n = 2)
+
+dictionary |>
+  mutate_at(element = )
+
+
+
 # update dictionary -------------------------------------------------------
+
 
 # TODO
 # Create and update dictionary
