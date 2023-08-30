@@ -240,15 +240,15 @@ get_variable_info <- function(data, directory = "", file_name = "") {
 directories <- c("data/", "data/")
 file_names <- c("water_samples.rda", "selected_samples.rda")
 
-dictionary <- get_variable_info(data = list(water_samples, selected_samples),
+dictionary_raw <- get_variable_info(data = list(water_samples, selected_samples),
                                 directory = directories,
                                 file_name = file_names)
 
- # export files to fill in dictionary
-dictionary |>
+ # export files to fill in dictionary manualy
+dictionary_raw |>
   write_csv("data-raw/dictionary.csv")
 
-dictionary |>
+dictionary_raw |>
   openxlsx::write.xlsx("data-raw/dictionary.xlsx")
 
 # prepare dictionary ------------------------------------------------------
@@ -267,16 +267,71 @@ openxlsx::write.xlsx(read_csv("data-raw/dictionary.csv"), "data-raw/dictionary.x
 
 # fill dictionary ---------------------------------------------------------
 
+dictionary <- get_variable_info(data = list(water_samples, selected_samples),
+                                directory = directories,
+                                file_name = file_names)
+
 dictionary <- dictionary |>
   mutate(variable_type = if_else(variable_name == "date",
                                  str_replace(variable_name, "date", "dttm"),
                                  variable_type))
 
-samples_march_raw |>
-  slice_head(n = 2) |> view()
+get_unit_info <- function(data, dictionary, file_name = "") {
+  dataset <- data
+  dictionary_temp <- dictionary
+
+  dictionary_unit <- dataset |>
+    slice_head(n = 2) |>
+    mutate(across(.cols = everything(), as.character),
+           variable_names = c("unit_type", "error"), .before = everything()) |>
+    pivot_longer(cols = -1, names_to = "variable_name") |>
+    pivot_wider(names_from = variable_names) |>
+    mutate(file_name = file_name, .before = everything())
+
+  ifelse("unit_type" %in% names(dictionary_temp),
+         dictionary_out <- left_join(dictionary_temp, dictionary_unit,
+                                     by = join_by(file_name,
+                                                  unit_type,
+                                                  error)),
+         dictionary_out <- left_join(dictionary_temp, dictionary_unit,
+                                     by = join_by(file_name, variable_name))
+                           )
+
+  # dictionary_out|>
+  #   mutate(description = description, .after = everything())
+
+  return(dictionary_out)
+}
+
+dictionary_select <- get_unit_info(selected_samples_raw, dictionary_raw, "selected_samples.rda")
+dictionary_water <- get_unit_info(samples_march_raw, dictionary_raw, "water_samples.rda")
+
+dictionary <- dictionary_water |>
+  mutate(unit_type = if_else((file_name == "selected_samples.rda"),
+                             dictionary_select$unit_type,
+                             unit_type)) |>
+  mutate(error = if_else((file_name == "selected_samples.rda"),
+                         dictionary_select$error,
+                         error))
+
+# left_join(dictionary_water, dictionary_water,
+#           by = join_by(directory, file_name, variable_name, variable_type,
+#                        description, unit_type, error),
+#           multiple = "last") |> view()
+
+# Update export files
+dictionary |>
+  write_csv("data-raw/dictionary.csv")
+
+dictionary |>
+  openxlsx::write.xlsx("data-raw/dictionary.xlsx")
+
 
 selected_samples_raw |>
   slice_head(n = 2)
+
+dictionary |>
+  mutate(unit_type = )
 
 dictionary |>
   mutate_at(element = )
