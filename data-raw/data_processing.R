@@ -62,8 +62,8 @@ samples_march_raw <- samples_march_raw |>
          date = Data,
          conductivity = Cond.,
          T_avg = Tª,
-         del_18O = `d 18O`,
-         del_2H = d2H) |>
+         delta_O_18 = `d 18O`,
+         delta_H_2 = d2H) |>
   rename_with(.cols = c(Localization, Geology, Alkalinity),
               .fn = tolower)
 
@@ -80,36 +80,11 @@ samples_march <- samples_march |>
                   NH4 == "0.2-0.5" ~ "0.35",
                   .default = NH4)) |>
   mutate(PO4 = str_replace(PO4, "<LOQ", "10")) |>
-  mutate_at(.vars = vars(conductivity:del_2H),
+  mutate_at(.vars = vars(conductivity:delta_H_2),
             .funs = as.numeric)
 
-
-# samples_march |>
-#   mutate_at(.vars = vars(conductivity:del_2H),
-#             .funs = if_else(str_starts(pattern = "<"),
-#                             true = vars(conductivity:del_2H),
-#                             false = as.numeric)) |> view()
-
-# data_purty_names <- samples_march |>
-#   rename(tot_organic_carbon = TOC,
-#          dissolved_oxygen = DO,
-#          oxidation_reduction_potential = ORP,
-#          redox_potential = eH,
-#          "ammonium_(NH4)" = NH4,
-#          "sulfate_(SO4)" = SO4,
-#          "nitrate_(NO3)" = NO3,
-#          "Phosphate_(PO4)" = PO4) |>
-#   glimpse()
-
-# data_with_names <- data_purty_names |>
-#   rename_with(.cols = c(Cl,Br:U),
-#               # .fn = ~ periodic_data$name[match(., periodic_data$symb)]
-#               .fn = ~ paste0(periodic_data$name[match(., periodic_data$symb)], "_(", ., ")")
-#               ) |> as_tibble()
-# data_with_names
-
 # create simple feature (geodata)
-sf_march <- st_as_sf(samples_march, coords = c("utm_x", "utm_y"), crs = 32737) |>
+sf_march <- st_as_sf(samples_march, coords = c("utm_x", "utm_y"), crs = 21037) |>
   st_transform(crs = 4236)
 
 
@@ -121,8 +96,8 @@ samples_june_raw <- samples_june_raw |>
          date = Data,
          conductivity = Cond.,
          T_avg = Tª,
-         del_18O = `d 18O`,
-         del_2H = d2H) |>
+         delta_O_18 = `d 18O`,
+         delta_H_2 = d2H) |>
   rename_with(.cols = c(Localization, Geology, Alkalinity),
               .fn = tolower)
 
@@ -135,17 +110,16 @@ samples_june <- samples_june |>
                 .fns = ~ if_else(. == "<0,8" | . == "<0.8", "0.7999", .))) |>
   mutate(across(.cols = c(NH4:F),
                 .fns = ~ str_replace(., "<LOQ", "10.0000"))) |>
-  mutate_at(.vars = vars(conductivity:del_2H),
+  mutate_at(.vars = vars(conductivity:delta_H_2),
             .funs = as.numeric)
 
 # create simple feature (geodata)
-sf_june <- st_as_sf(samples_june, coords = c("utm_x", "utm_y"), crs = 32737) |>
+sf_june2 <- st_as_sf(samples_june, coords = c("utm_x", "utm_y"), crs = 21037) |>
   st_transform(crs = 4236)
-
 
 water_samples <- samples_march |> full_join(samples_june)
 
-sf_samples <- st_as_sf(water_samples, coords = c("utm_x", "utm_y"), crs = 32737) |>
+sf_samples <- st_as_sf(water_samples, coords = c("utm_x", "utm_y"), crs = 21037) |>
   st_transform(crs = 4236)
 
 ## tidy data of selected locations that were collected weekly
@@ -189,7 +163,7 @@ qtm(sf_samples)
 
 # DONE
 # create export files folder
-fs::dir_create(here::here("inst", "extdata"))
+# fs::dir_create(here::here("inst", "extdata"))
 
 # UPDATE
 # create DATASET.rda in data directory
@@ -203,9 +177,10 @@ openxlsx::write.xlsx(water_samples, here::here("inst", "extdata", "water_samples
 write_csv(selected_samples, here::here("inst", "extdata", "selected_samples.csv"))
 openxlsx::write.xlsx(selected_samples, here::here("inst", "extdata", "selected_samples.xlsx"))
 
-# prepare dictionaries legacy -----------------------------------------------
-
+# prepare and create skeleton dictionary files (legacy) -----------------------------------------------
 ## will be replaced by use_dictionary_skeleton function from openwashdata pkg
+
+# Lars' function to create a skeleton of the dictionary
 get_variable_info <- function(data, directory = "", file_name = "") {
   total_variables <- sum(sapply(data, function(df) length(names(df))))
 
@@ -244,28 +219,16 @@ dictionary_raw <- get_variable_info(data = list(water_samples, selected_samples)
                                 directory = directories,
                                 file_name = file_names)
 
- # export files to fill in dictionary manualy
+ # export files to fill in dictionary manually
 dictionary_raw |>
   write_csv("data-raw/dictionary.csv")
 
 dictionary_raw |>
   openxlsx::write.xlsx("data-raw/dictionary.xlsx")
 
-# prepare dictionary ------------------------------------------------------
-
-## create a skeleton files for the dictionary
-
-# TODO after tidy data
-# output: dictionary.csv file
-use_dictionary_skeleton(data_location = NULL,
-                        skeleton_dest = "data-raw/dictionary.csv",
-                        data_file_pattern = ".rda",
-                        ignore_pattern = "codebook.Rda",
-                        recursive = TRUE)
-# output: dictionary.xlsx file
-openxlsx::write.xlsx(read_csv("data-raw/dictionary.csv"), "data-raw/dictionary.xlsx")
-
 # fill dictionary ---------------------------------------------------------
+
+## Quick fixes
 
 # fixes wrong variable type info for datetime variables
 dictionary_raw <- dictionary_raw |>
@@ -273,7 +236,9 @@ dictionary_raw <- dictionary_raw |>
                                  str_replace(variable_name, "date", "dttm"),
                                  variable_type))
 
-## Quite ugly way to fill in the information about the unit type and error
+## add additional variables containing the unit type and the error of the measurement
+
+# Quite ugly way to fill in the information about the unit type and error
 get_unit_info <- function(data, dictionary, file_name = "") {
   dataset <- data
   dictionary_temp <- dictionary
@@ -303,15 +268,92 @@ dictionary <- dictionary_water |>
                          dictionary_select$error,
                          error))
 
+## exploratory break
+
+# explore the current state of the dictionary
+dictionary |> view()
+
+# explore dictionary (especially unit_type)
+dictionary |> count(unit_type)
+# we have 7 different unit types:
+# "(mg/L)"; "(µS/cm)"; "Arc 1960"; "as mg/L HCO3"; "mV"; "ppb"; "°C"
+
+## Add descriptions based on unit types
+
+dictionary <- dictionary |>
+  mutate(description = case_when(
+    (unit_type == "(mg/L)") ~ case_when(
+      variable_name == "TOC" ~ "Total organic carbon (TOC) is an analytical parameter representing the concentration of organic carbon in a sample.",
+      variable_name == "DO" ~ "Dissolved oxygen (DO) levels in environmental water depend on the physiochemical and biochemical activities in water body and it is an important useful in pollution and waste treatment process control.",
+      variable_name == "NH4" ~ "Ammonium concentration in (mg/L).",
+      variable_name == "SO4" ~ "Sulfate concentration in (mg/L)",
+      variable_name == "NO3" ~ "Nitrate concentration in (mg/L)",
+      variable_name == "PO4" ~ "Phosphate concentration in (mg/L)",
+      .default = paste0(periodic_data$name[match(variable_name, periodic_data$symb)], " concentration in (mg/L)")),
+    (unit_type == "ppb") ~ paste0(periodic_data$name[match(variable_name, periodic_data$symb)], " concentration in parts per billion (ppb)."),
+    (unit_type == "(µS/cm)") ~ "Conductivity of the sample in (µS/cm)",
+    (unit_type == "Arc 1960") ~ "Geospatial data of the water sampling locations. The geographic coordinate system 'Arc 1960 / UTM zone 37S' (EPSG:21037) which is used for the areas of Kenya and Tanzania - south of equator and east of 36°E.",
+    (unit_type == "as mg/L HCO3") ~ "Alkalinity of the sample as mg of bicarbonate (HCO3) per liter (mg[HCO3]/L).",
+    (unit_type == "mV") ~ case_when(
+      variable_name == "ORP" ~ "Oxidation reduction potential (ORP) in (mV).",
+      variable_name == "eH" ~ "Redox potential (eH) in (mV).",
+      .default = description),
+    (unit_type == "°C") ~ "Average ambient temperature at the time of the sampling",
+    .default = description))
 
 
-# Update export files
+## exploratory break
+
+# explore the current state of the dictionary
+dictionary |> view()
+
+# explore the missing descriptions
+dictionary |> filter(description == "")
+# We have 7 missing descriptions...
+
 dictionary |>
-  write_csv("data-raw/dictionary.csv")
+  mutate(description = case_when(
+    variable_name == "localization" ~ "Name of the localization where the sample was taken.",
+    variable_name == "geology" ~ "Composition of the ground.",
+    variable_name == "date" ~ "Date the sample was taken.",
+    variable_name == "pH" ~ "Acidity/basicity of the sample using the pH value.",
+    variable_name == "delta_O_18" ~ "The ratio of stable isotopes oxygen-18 (18O) and oxygen-16 (16O) as a measure of groundwater/mineral interactions.",
+    variable_name == "delat_H_2" ~ "δ2H, or delta deuterium, is a measure of the relative abundance of deuterium (a stable isotope of hydrogen) in a sample, often used in hydrology and environmental science to trace the origin and movement of water.",
+    variable_name == "code" ~ "",
+    .default = description))
 
-dictionary |>
-  openxlsx::write.xlsx("data-raw/dictionary.xlsx")
+# TODO
+# Add these Warnings somwhere in the documentation!!!
+# "WARNING: 'NH4 == 8.0001' means 'NH4 > 8'; 'NH4 == 0.65' means '0.5 < NH4 < 0.8'; 'NH4 == 0.35' means '0.2 < NH4 < 0.5'"
+# "WARNING: If value is equal shows 0.7999 (watch out for rounded numbers!) it can only be said, that the values is bellow 0.8."
+# "Which temperature was taken?
+# LOQ? LOD?
+# What is "Code"
 
+
+# samples_march |>
+#   mutate_at(.vars = vars(conductivity:delta_H_2),
+#             .funs = if_else(str_starts(pattern = "<"),
+#                             true = vars(conductivity:delta_H_2),
+#                             false = as.numeric)) |> view()
+
+# data_purty_names <- samples_march |>
+#   rename(tot_organic_carbon = TOC,
+#          dissolved_oxygen = DO,
+#          oxidation_reduction_potential = ORP,
+#          redox_potential = eH,
+#          "ammonium_(NH4)" = NH4,
+#          "sulfate_(SO4)" = SO4,
+#          "nitrate_(NO3)" = NO3,
+#          "Phosphate_(PO4)" = PO4) |>
+#   glimpse()
+
+# data_with_names <- data_purty_names |>
+#   rename_with(.cols = c(Cl,Br:U),
+#               # .fn = ~ periodic_data$name[match(., periodic_data$symb)]
+#               .fn = ~ paste0(periodic_data$name[match(., periodic_data$symb)], "_(", ., ")")
+#               ) |> as_tibble()
+# data_with_names
 
 
 
@@ -333,3 +375,4 @@ update_dictionary <- function(dictionary_path) {
 # TODO
 update_dictionary("data-raw/dictionary.xlsx")
 
+oxidation_reduction_potential
