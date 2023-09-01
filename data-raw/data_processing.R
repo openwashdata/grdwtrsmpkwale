@@ -219,7 +219,7 @@ dictionary_raw <- get_variable_info(data = list(water_samples, selected_samples)
                                 directory = directories,
                                 file_name = file_names)
 
- # export files to fill in dictionary manually
+# export files to fill in dictionary manually
 dictionary_raw |>
   write_csv("data-raw/dictionary.csv")
 
@@ -311,16 +311,16 @@ dictionary |> view()
 dictionary |> filter(description == "")
 # We have 7 missing descriptions...
 
-dictionary |>
+dictionary <- dictionary |>
   mutate(description = case_when(
     variable_name == "localization" ~ "Name of the localization where the sample was taken.",
     variable_name == "geology" ~ "Composition of the ground.",
     variable_name == "date" ~ "Date the sample was taken.",
     variable_name == "pH" ~ "Acidity/basicity of the sample using the pH value.",
     variable_name == "delta_O_18" ~ "The ratio of stable isotopes oxygen-18 (18O) and oxygen-16 (16O) as a measure of groundwater/mineral interactions.",
-    variable_name == "delat_H_2" ~ "δ2H, or delta deuterium, is a measure of the relative abundance of deuterium (a stable isotope of hydrogen) in a sample, often used in hydrology and environmental science to trace the origin and movement of water.",
+    variable_name == "delta_H_2" ~ "δ2H, or delta deuterium, is a measure of the relative abundance of deuterium (a stable isotope of hydrogen) in a sample, often used in hydrology and environmental science to trace the origin and movement of water.",
     variable_name == "code" ~ "",
-    .default = description))
+    .default = description)) |> view()
 
 # TODO
 # Add these Warnings somwhere in the documentation!!!
@@ -330,49 +330,13 @@ dictionary |>
 # LOQ? LOD?
 # What is "Code"
 
-
-# samples_march |>
-#   mutate_at(.vars = vars(conductivity:delta_H_2),
-#             .funs = if_else(str_starts(pattern = "<"),
-#                             true = vars(conductivity:delta_H_2),
-#                             false = as.numeric)) |> view()
-
-# data_purty_names <- samples_march |>
-#   rename(tot_organic_carbon = TOC,
-#          dissolved_oxygen = DO,
-#          oxidation_reduction_potential = ORP,
-#          redox_potential = eH,
-#          "ammonium_(NH4)" = NH4,
-#          "sulfate_(SO4)" = SO4,
-#          "nitrate_(NO3)" = NO3,
-#          "Phosphate_(PO4)" = PO4) |>
-#   glimpse()
-
-# data_with_names <- data_purty_names |>
-#   rename_with(.cols = c(Cl,Br:U),
-#               # .fn = ~ periodic_data$name[match(., periodic_data$symb)]
-#               .fn = ~ paste0(periodic_data$name[match(., periodic_data$symb)], "_(", ., ")")
-#               ) |> as_tibble()
-# data_with_names
-
-
-
-
+# TODO
 # update dictionary -------------------------------------------------------
 
+# export files to fill in dictionary manually
+dictionary_raw |>
+  write_csv("data-raw/dictionary.csv")
 
-# TODO
-# Create and update dictionary
-# function that conversts dictionary as xlsx to csv for later use in roxygen
-update_dictionary <- function(dictionary_path) {
-  dictionary_excel <-
-    readxl::read_excel(dictionary_path)
+dictionary_raw |>
+  openxlsx::write.xlsx("data-raw/dictionary.xlsx")
 
-  dictionary_excel |>
-    readr::write_csv("data-raw/dictionary.csv")
-}
-
-# TODO
-update_dictionary("data-raw/dictionary.xlsx")
-
-oxidation_reduction_potential
