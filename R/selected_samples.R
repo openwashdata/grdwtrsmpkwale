@@ -1,0 +1,77 @@
+#' Samples of selected venues collected 3 weeks in a row
+#'
+#' @format A tibble with 24 rows and 69 variables
+#'
+#' \describe{
+#'   \item{code}{}
+#'   \item{date}{Date the sample was taken.}
+#'   \item{conductivity}{Conductivity of the sample in (µS/cm)}
+#'   \item{T_avg}{Average ambient temperature at the time of the sampling}
+#'   \item{pH}{Acidity/basicity of the sample using the pH value.}
+#'   \item{Cl}{Chlorine concentration in (mg/L)}
+#'   \item{SO4}{Sulfate concentration in (mg/L)}
+#'   \item{NO3}{Nitrate concentration in (mg/L)}
+#'   \item{PO4}{Phosphate concentration in (mg/L)}
+#'   \item{Br}{Bromine concentration in (mg/L)}
+#'   \item{F}{Fluorine concentration in (mg/L)}
+#'   \item{Ca}{Calcium concentration in (mg/L)}
+#'   \item{Mg}{Magnesium concentration in (mg/L)}
+#'   \item{Na}{Sodium concentration in (mg/L)}
+#'   \item{K}{Potassium concentration in (mg/L)}
+#'   \item{Fe}{Iron concentration in (mg/L)}
+#'   \item{Si}{Silicon concentration in (mg/L)}
+#'   \item{Al}{Aluminum concentration in (mg/L)}
+#'   \item{S}{Sulfur concentration in (mg/L)}
+#'   \item{P}{Phosphorus concentration in (mg/L)}
+#'   \item{Li}{Lithium concentration in parts per billion (ppb).}
+#'   \item{Be}{Beryllium concentration in parts per billion (ppb).}
+#'   \item{B}{Boron concentration in parts per billion (ppb).}
+#'   \item{Sc}{Scandium concentration in parts per billion (ppb).}
+#'   \item{Ti}{Titanium concentration in parts per billion (ppb).}
+#'   \item{V}{Vanadium concentration in parts per billion (ppb).}
+#'   \item{Cr}{Chromium concentration in parts per billion (ppb).}
+#'   \item{Mn}{Manganese concentration in parts per billion (ppb).}
+#'   \item{Co}{Cobalt concentration in parts per billion (ppb).}
+#'   \item{Ni}{Nickel concentration in parts per billion (ppb).}
+#'   \item{Cu}{Copper concentration in parts per billion (ppb).}
+#'   \item{Zn}{Zinc concentration in parts per billion (ppb).}
+#'   \item{Ga}{Gallium concentration in parts per billion (ppb).}
+#'   \item{Ge}{Germanium concentration in parts per billion (ppb).}
+#'   \item{As}{Arsenic concentration in parts per billion (ppb).}
+#'   \item{Se}{Selenium concentration in parts per billion (ppb).}
+#'   \item{Rb}{Rubidium concentration in parts per billion (ppb).}
+#'   \item{Sr}{Strontium concentration in parts per billion (ppb).}
+#'   \item{Y}{Yttrium concentration in parts per billion (ppb).}
+#'   \item{Zr}{Zirconium concentration in parts per billion (ppb).}
+#'   \item{Nb}{Niobium concentration in parts per billion (ppb).}
+#'   \item{Mo}{Molybdenum concentration in parts per billion (ppb).}
+#'   \item{Cd}{Cadmium concentration in parts per billion (ppb).}
+#'   \item{Sn}{Tin concentration in parts per billion (ppb).}
+#'   \item{Sb}{Antimony concentration in parts per billion (ppb).}
+#'   \item{Cs}{Cesium concentration in parts per billion (ppb).}
+#'   \item{Ba}{Barium concentration in parts per billion (ppb).}
+#'   \item{La}{Lanthanum concentration in parts per billion (ppb).}
+#'   \item{Ce}{Cerium concentration in parts per billion (ppb).}
+#'   \item{Pr}{Praseodymium concentration in parts per billion (ppb).}
+#'   \item{Nd}{Neodymium concentration in parts per billion (ppb).}
+#'   \item{Sm}{Samarium concentration in parts per billion (ppb).}
+#'   \item{Eu}{Europium concentration in parts per billion (ppb).}
+#'   \item{Gd}{Gadolinium concentration in parts per billion (ppb).}
+#'   \item{Tb}{Terbium concentration in parts per billion (ppb).}
+#'   \item{Dy}{Dysprosium concentration in parts per billion (ppb).}
+#'   \item{Ho}{Holmium concentration in parts per billion (ppb).}
+#'   \item{Er}{Erbium concentration in parts per billion (ppb).}
+#'   \item{Tm}{Thulium concentration in parts per billion (ppb).}
+#'   \item{Yb}{Ytterbium concentration in parts per billion (ppb).}
+#'   \item{Lu}{Lutetium concentration in parts per billion (ppb).}
+#'   \item{Hf}{Hafnium concentration in parts per billion (ppb).}
+#'   \item{Ta}{Tantalum concentration in parts per billion (ppb).}
+#'   \item{W}{Wolfram concentration in parts per billion (ppb).}
+#'   \item{Tl}{Thallium concentration in parts per billion (ppb).}
+#'   \item{Pb}{Lead concentration in parts per billion (ppb).}
+#'   \item{Bi}{Bismuth concentration in parts per billion (ppb).}
+#'   \item{Th}{Thorium concentration in parts per billion (ppb).}
+#'   \item{U}{Uranium concentration in parts per billion (ppb).}
+#' }
+
+'selected_samples'

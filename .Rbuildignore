@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^bootstrap$
 ^data-raw$
+^LICENSE\.md$
+^CITATION\.cff$
