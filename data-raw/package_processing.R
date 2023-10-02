@@ -77,11 +77,14 @@ devtools::build_rmd("vignettes/articles/examples.Rmd")
 
 # TODO
 # Add automated CMD BUILD check
-usethis::use_github_action_check_standard()
+usethis::use_github_action()
 
 # TODO
 # Setup pkgdown configuration and github actions
 usethis::use_pkgdown()
+
+# TODO
+# Adjust _pkgdown.yml file
 
 # Build pkgdown website
 pkgdown::build_site()

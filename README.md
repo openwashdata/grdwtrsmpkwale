@@ -7,7 +7,7 @@
 
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-
+[![R-CMD-check](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
@@ -2686,14 +2686,14 @@ Data are available as
 
     #> To cite package 'grdwtrsmpkwale' in publications use:
     #> 
-    #>   Zhong M, Loos S (2023). _grdwtrsmpkwale: "Groundwater analysis from
-    #>   2016 in Kwale, Kenya"_. R package version 0.0.0.9000,
+    #>   Zhong M, Loos S (2023). _grdwtrsmpkwale: Groundwater analysis from
+    #>   2016 in Kwale, Kenya_. R package version 0.0.0.9000,
     #>   <https://github.com/openwashdata/grdwtrsmpkwale>.
     #> 
     #> A BibTeX entry for LaTeX users is
     #> 
     #>   @Manual{,
-    #>     title = {grdwtrsmpkwale: "Groundwater analysis from 2016 in Kwale, Kenya"},
+    #>     title = {grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya},
     #>     author = {Mian Zhong and Sebastian Camilo Loos},
     #>     year = {2023},
     #>     note = {R package version 0.0.0.9000},
