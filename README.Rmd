@@ -1,0 +1,135 @@
+---
+output: github_document
+always_allow_html: true
+editor_options: 
+  markdown: 
+    wrap: 72
+  chunk_output_type: console
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(tidyverse)
+```
+
+# grdwtrsmpkwale
+
+<!-- badges: start -->
+
+[![License: CC BY
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+<!-- badges: end -->
+
+The goal of `grdwtrsmpkwale` is to provide datasets for research and
+planning of water and solid waste management in Kwale, Kenya. This
+package includes water anlaysis data collected in 2016 combined with the
+geospatial data from the collection points.
+
+## Installation
+
+You can install the development version of 'grdwtrsmpkwale' from
+[GitHub](https://github.com/openwashdata/grdwtrsmpkwale) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("openwashdata/grdwtrsmpkwale")
+```
+
+Alternatively, you can download the individual datasets as CSV or XLSX
+file from the table below.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+extdata_path <- "https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/"
+
+read_csv("data-raw/dictionary.csv") |> 
+  distinct(file_name) |> 
+  mutate(file_name = str_remove(file_name, ".rda")) |> 
+  rename(dataset = file_name) |> 
+  mutate(
+    CSV = paste0("[Download CSV](", extdata_path, dataset, ".csv)"),
+    XLSX = paste0("[Download XLSX](", extdata_path, dataset, ".xlsx)")
+  ) |> 
+  knitr::kable()
+
+```
+
+# Data
+
+This data package has two datasets: `water_samples` and
+`selected_samples`.
+
+```{r}
+library(grdwtrsmpkwale)
+```
+
+## water_samples
+
+DATA DESCRIPTION
+
+The `water_samples` data set has `r ncol(water_samples)` variables and
+`r nrow(water_samples)` observations. For an overview of the variable
+names, see the following table.
+
+```{r, eval=FALSE}
+water_samples
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+readr::read_csv("data-raw/dictionary.csv") |>
+  dplyr::filter(file_name == "water_samples.rda") |>
+  dplyr::select(variable_name:error) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling() |> 
+  kableExtra::scroll_box()
+```
+
+##  selected_samples
+
+DATA DESCRIPTION
+
+The `selected_samples` data set has `r ncol(selected_samples)` variables
+and `r nrow(selected_samples)` observations. For an overview of the
+variable names, see the following table.
+
+```{r, eval=FALSE}
+selected_samples
+```
+
+```{r echo=FALSE, message=TRUE, warning=FALSE}
+readr::read_csv("data-raw/dictionary.csv") |> 
+  dplyr::filter(file_name == "selected_samples.rda") |> 
+  dplyr::select(variable_name:error) |>  
+  knitr::kable() |> 
+  kableExtra::kable_styling() |> 
+  kableExtra::scroll_box()
+```
+
+## Example (TBD)
+
+Write a demo snippet here.
+
+```{r}
+```
+
+# License
+
+Data are available as
+[CC-BY](https://github.com/openwashdata/grdwtrsmpkwale/blob/main/LICENSE.md).
+
+# Citation
+
+```{r echo=FALSE}
+citation("grdwtrsmpkwale")
+```
+
+## Related References (TBD)

@@ -4,9 +4,9 @@
 \name{grdwtrsmpkwale-package}
 \alias{grdwtrsmpkwale}
 \alias{grdwtrsmpkwale-package}
-\title{grdwtrsmpkwale: What the Package Does (One Line, Title Case)}
+\title{grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya}
 \description{
-What the package does (one paragraph).
+"The goal of `grdwtrsmpkwale` is to provide datasets for research and planning of water and solid waste management in Kwale, Kenya. This package includes water anlaysis data collected in 2016 combined with the geospatial data from the collection points."
 }
 \seealso{
 Useful links:

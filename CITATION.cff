@@ -7,9 +7,12 @@ cff-version: 1.2.0
 message: 'To cite package "grdwtrsmpkwale" in publications use:'
 type: software
 license: CC-BY-4.0
-title: 'grdwtrsmpkwale: What the Package Does (One Line, Title Case)'
+title: 'grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya'
 version: 0.0.0.9000
-abstract: What the package does (one paragraph).
+abstract: '"The goal of `grdwtrsmpkwale` is to provide datasets for research and planning
+  of water and solid waste management in Kwale, Kenya. This package includes water
+  anlaysis data collected in 2016 combined with the geospatial data from the collection
+  points."'
 authors:
 - family-names: Zhong
   given-names: Mian

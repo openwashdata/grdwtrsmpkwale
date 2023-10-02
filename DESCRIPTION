@@ -1,7 +1,7 @@
 Package: grdwtrsmpkwale
-Title: What the Package Does (One Line, Title Case)
+Title: Groundwater analysis from 2016 in Kwale, Kenya
 Version: 0.0.0.9000
-Description: What the package does (one paragraph).
+Description: "The goal of `grdwtrsmpkwale` is to provide datasets for research and planning of water and solid waste management in Kwale, Kenya. This package includes water anlaysis data collected in 2016 combined with the geospatial data from the collection points."
 License: CC BY 4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
