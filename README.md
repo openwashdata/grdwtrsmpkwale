@@ -44,7 +44,13 @@ library(grdwtrsmpkwale)
 
 ## water_samples
 
-DATA DESCRIPTION
+This dataset contains data from an analysis of groundwater in Kwale,
+Kenya. The data was collected once in March and once in June of 2016 for
+each sampling spot. In total 157 samples were taken in 71 different
+localisations that have their geospatial data included in this data
+package. The sample analysis includes different measurements including
+conductivity, temperature, pH-values and concentrations of different
+elements/molecules for the groundwater samples.
 
 The `water_samples` data set has 80 variables and 157 observations. For
 an overview of the variable names, see the following table.
@@ -1453,9 +1459,22 @@ NA
 
 </div>
 
+<div class="figure" style="text-align: center">
+
+<img src="man/figures/README-fig-location-plot-1.png" alt="Locations of sampling spots" width="100%" />
+<p class="caption">
+Locations of sampling spots
+</p>
+
+</div>
+
 ## selected_samples
 
-DATA DESCRIPTION
+This dataset contains data from an analysis of groundwater in Kwale,
+Kenya. The data was collected three weeks in a row at 8 different
+locations. The sample analysis includes measurements of conductivity,
+temperature, pH-values and concentrations of different
+elements/molecules.
 
 The `selected_samples` data set has 69 variables and 24 observations.
 For an overview of the variable names, see the following table.
@@ -1463,14 +1482,6 @@ For an overview of the variable names, see the following table.
 ``` r
 selected_samples
 ```
-
-    #> Rows: 149 Columns: 7
-    #> ── Column specification ────────────────────────────────────────────────────────
-    #> Delimiter: ","
-    #> chr (7): directory, file_name, variable_name, variable_type, description, un...
-    #> 
-    #> ℹ Use `spec()` to retrieve the full column specification for this data.
-    #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 <div style="border: 1px solid #ddd; padding: 5px; ">
 
@@ -2673,9 +2684,32 @@ ppb
 
 </div>
 
-## Example (TBD)
+## Example
 
-Write a demo snippet here.
+``` r
+sf_samples <- water_samples |> 
+  mutate(date = ymd(date)) |> 
+  mutate(month = month(date), .after = date) |> 
+  drop_na(month) |> 
+  st_as_sf(coords = c("utm_x", "utm_y"), crs = 21037) |>
+  st_transform(crs = 4236)
+
+tmap_mode("view")
+
+tm_shape(sf_samples) +
+  tm_dots(col = "pH", size = 0.1, alpha = 0.7, palette = "RdBu") +
+  tm_facets(by = "month", as.layers = TRUE) +
+  tm_layout(panel.labels = c("March", "June"))
+```
+
+<div class="figure" style="text-align: center">
+
+<img src="man/figures/screenshot-map-sampling-spots.png" alt="Screenshot of an interactive map with OpenStreetMap layer." width="100%" />
+<p class="caption">
+Screenshot of an interactive map with OpenStreetMap layer.
+</p>
+
+</div>
 
 # License
 

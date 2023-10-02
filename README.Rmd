@@ -14,10 +14,18 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  message = FALSE,
+  warning = FALSE,
+  fig.retina = 2,
+  fig.align = 'center'
 )
 
+library(lubridate)
+library(sf)
 library(tidyverse)
+library(tmap)
+library(tmaptools)
 ```
 
 # grdwtrsmpkwale
@@ -74,7 +82,7 @@ library(grdwtrsmpkwale)
 
 ## water_samples
 
-DATA DESCRIPTION
+This dataset contains data from an analysis of groundwater in Kwale, Kenya. The data was collected once in March and once in June of 2016 for each sampling spot. In total `r nrow(water_samples)` samples were taken in `r nrow(distinct(water_samples, localization))` different localisations that have their geospatial data included in this data package. The sample analysis includes different measurements including conductivity, temperature, pH-values and concentrations of different elements/molecules for the groundwater samples.
 
 The `water_samples` data set has `r ncol(water_samples)` variables and
 `r nrow(water_samples)` observations. For an overview of the variable
@@ -82,6 +90,8 @@ names, see the following table.
 
 ```{r, eval=FALSE}
 water_samples
+
+
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -93,9 +103,25 @@ readr::read_csv("data-raw/dictionary.csv") |>
   kableExtra::scroll_box()
 ```
 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+#| label: fig-location-plot
+#| fig-cap: Locations of sampling spots
+
+sf_samples <- st_as_sf(water_samples, coords = c("utm_x", "utm_y"), crs = 21037) |>
+  st_transform(crs = 4236)
+
+tmap_mode("plot")
+
+sf_samples |>
+  tm_shape() +
+  tm_dots(size = 0.1, col = "pH", palette = "RdBu") +
+  tm_graticules()
+
+```
+
 ##  selected_samples
 
-DATA DESCRIPTION
+This dataset contains data from an analysis of groundwater in Kwale, Kenya. The data was collected three weeks in a row at 8 different locations. The sample analysis includes measurements of conductivity, temperature, pH-values and concentrations of different elements/molecules.
 
 The `selected_samples` data set has `r ncol(selected_samples)` variables
 and `r nrow(selected_samples)` observations. For an overview of the
@@ -105,20 +131,36 @@ variable names, see the following table.
 selected_samples
 ```
 
-```{r echo=FALSE, message=TRUE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 readr::read_csv("data-raw/dictionary.csv") |> 
   dplyr::filter(file_name == "selected_samples.rda") |> 
   dplyr::select(variable_name:error) |>  
-  knitr::kable() |> 
+  knitr::kable(show_col_types = FALSE) |> 
   kableExtra::kable_styling() |> 
   kableExtra::scroll_box()
 ```
 
-## Example (TBD)
+## Example
 
-Write a demo snippet here.
+```{r example, eval=FALSE, echo=TRUE}
+sf_samples <- water_samples |> 
+  mutate(date = ymd(date)) |> 
+  mutate(month = month(date), .after = date) |> 
+  drop_na(month) |> 
+  st_as_sf(coords = c("utm_x", "utm_y"), crs = 21037) |>
+  st_transform(crs = 4236)
 
-```{r}
+tmap_mode("view")
+
+tm_shape(sf_samples) +
+  tm_dots(col = "pH", size = 0.1, alpha = 0.7, palette = "RdBu") +
+  tm_facets(by = "month", as.layers = TRUE) +
+  tm_layout(panel.labels = c("March", "June"))
+
+```
+
+```{r, echo=FALSE, fig.cap="Screenshot of an interactive map with OpenStreetMap layer."}
+knitr::include_graphics("man/figures/screenshot-map-sampling-spots.png")
 ```
 
 # License
