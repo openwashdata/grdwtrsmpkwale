@@ -38,7 +38,7 @@ selected_samples_raw <- read_excel(here::here("data-raw", "samples.xlsx"),
                                     sheet = "Selected points sampled weekly",
                                     .name_repair = "unique")
 
-# laod periodic system data
+# load periodic system data
 data(periodicTable)
 periodic_data <- periodicTable |> select(c(numb:name))
 
@@ -61,7 +61,8 @@ samples_march_raw <- samples_march_raw |>
          utm_y = `UTM-Y`,
          date = Data,
          conductivity = Cond.,
-         T_avg = Tª,
+         T_avg = `T<U+00AA>`,
+         # T_avg = Tª,
          delta_O_18 = `d 18O`,
          delta_H_2 = d2H) |>
   rename_with(.cols = c(Localization, Geology, Alkalinity),
@@ -95,7 +96,8 @@ samples_june_raw <- samples_june_raw |>
          utm_y = `UTM-Y`,
          date = Data,
          conductivity = Cond.,
-         T_avg = Tª,
+         T_avg = `T<U+00AA>`,
+         # T_avg = Tª,
          delta_O_18 = `d 18O`,
          delta_H_2 = d2H) |>
   rename_with(.cols = c(Localization, Geology, Alkalinity),

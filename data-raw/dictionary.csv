@@ -8,7 +8,7 @@ data/,water_samples.rda,conductivity,double,Conductivity of the sample in (µS/c
 data/,water_samples.rda,T_avg,double,Average ambient temperature at the time of the sampling,°C,NA
 data/,water_samples.rda,pH,double,Acidity/basicity of the sample using the pH value.,NA,NA
 data/,water_samples.rda,TOC,double,Total organic carbon (TOC) is an analytical parameter representing the concentration of organic carbon in a sample.,(mg/L),NA
-data/,water_samples.rda,alkalinity,double,Alkalinity of the sample as mg of bicarbonate (HCO3) per liter (mg[HCO3]/L).,as mg/L HCO3,NA
+data/,water_samples.rda,alkalinity,double,Alkalinity of the sample as mg of bicarbonate (HCO3) per liter (mg_HCO3/L).,as mg/L HCO3,NA
 data/,water_samples.rda,DO,double,Dissolved oxygen (DO) levels in environmental water depend on the physiochemical and biochemical activities in water body and it is an important useful in pollution and waste treatment process control.,(mg/L),NA
 data/,water_samples.rda,ORP,double,Oxidation reduction potential (ORP) in (mV).,mV,NA
 data/,water_samples.rda,eH,double,Redox potential (eH) in (mV).,mV,NA

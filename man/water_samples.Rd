@@ -17,7 +17,7 @@ A tibble with 157 rows and 80 variables
 \item{T_avg}{Average ambient temperature at the time of the sampling}
 \item{pH}{Acidity/basicity of the sample using the pH value.}
 \item{TOC}{Total organic carbon (TOC) is an analytical parameter representing the concentration of organic carbon in a sample.}
-\item{alkalinity}{Alkalinity of the sample as mg of bicarbonate (HCO3) per liter (mg\link{HCO3}/L).}
+\item{alkalinity}{Alkalinity of the sample as mg of bicarbonate (HCO3) per liter (mg_HCO3/L).}
 \item{DO}{Dissolved oxygen (DO) levels in environmental water depend on the physiochemical and biochemical activities in water body and it is an important useful in pollution and waste treatment process control.}
 \item{ORP}{Oxidation reduction potential (ORP) in (mV).}
 \item{eH}{Redox potential (eH) in (mV).}

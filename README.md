@@ -249,7 +249,7 @@ double
 </td>
 <td style="text-align:left;">
 Alkalinity of the sample as mg of bicarbonate (HCO3) per liter
-(mg\[HCO3\]/L).
+(mg_HCO3/L).
 </td>
 <td style="text-align:left;">
 as mg/L HCO3
@@ -2720,7 +2720,7 @@ Data are available as
 
     #> To cite package 'grdwtrsmpkwale' in publications use:
     #> 
-    #>   Zhong M, Loos S (2023). _grdwtrsmpkwale: Groundwater analysis from
+    #>   Zhong M, Loos S (????). _grdwtrsmpkwale: Groundwater analysis from
     #>   2016 in Kwale, Kenya_. R package version 0.0.0.9000,
     #>   <https://github.com/openwashdata/grdwtrsmpkwale>.
     #> 
@@ -2729,7 +2729,6 @@ Data are available as
     #>   @Manual{,
     #>     title = {grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya},
     #>     author = {Mian Zhong and Sebastian Camilo Loos},
-    #>     year = {2023},
     #>     note = {R package version 0.0.0.9000},
     #>     url = {https://github.com/openwashdata/grdwtrsmpkwale},
     #>   }
