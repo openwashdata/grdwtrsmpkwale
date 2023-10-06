@@ -7,10 +7,11 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Authors@R: c(
-    person("Mian", "Zhong", , "mzhong@ethz.ch", role = c("aut", "cre"),
+    person("Sebastian Camilo", "Loos", , "sloos@ethz.ch", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-8830-1734")),
+           person("Mian", "Zhong", , "mzhong@ethz.ch", role = "aut",
            comment = c(ORCID = "0009-0009-4546-7214")),
-    person("Sebastian Camilo", "Loos", , "sloos@ethz.ch", role = "aut",
-           comment = c(ORCID = "0000-0002-8830-1734"))
+           person("Rob", "Hope", role = "aut")
   )
 URL: https://github.com/openwashdata/grdwtrsmpkwale
 BugReports: https://github.com/openwashdata/grdwtrsmpkwale/issues

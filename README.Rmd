@@ -35,6 +35,7 @@ library(tmaptools)
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![R-CMD-check](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
@@ -71,6 +72,21 @@ read_csv("data-raw/dictionary.csv") |>
 
 ```
 
+# Introduction
+
+This dataset contains results of two sampling campaigns conducted in
+Kwale County Kenya in March and June 2016 by GHS/UPC as part of the Gro
+for GooD project.[^1]
+
+[^1]: <https://metadata.bgs.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/50cdcbae-bc14-628b-e054-002128a47908>
+
+Water samples from over 79 groundwater and 6 surface water (SW)
+locations were analysed for major ions, stable isotopes, selected trace
+constituents, electrical conductivity, nitrates, ammonia, pH, DO
+(Dissolved Oxygen), Eh (oxidation / reduction potential), Temperature,
+TOC (Total Organic Carbon) and field alkalinity. Most locations were
+sampled in both March (dry season) and June (wet season).
+
 # Data
 
 This data package has two datasets: `water_samples` and
@@ -82,7 +98,14 @@ library(grdwtrsmpkwale)
 
 ## water_samples
 
-This dataset contains data from an analysis of groundwater in Kwale, Kenya. The data was collected once in March and once in June of 2016 for each sampling spot. In total `r nrow(water_samples)` samples were taken in `r nrow(distinct(water_samples, localization))` different localisations that have their geospatial data included in this data package. The sample analysis includes different measurements including conductivity, temperature, pH-values and concentrations of different elements/molecules for the groundwater samples.
+This dataset contains data from an analysis of groundwater in Kwale,
+Kenya. The data was collected once in March and once in June of 2016 for
+each sampling spot. In total `r nrow(water_samples)` samples were taken
+in `r nrow(distinct(water_samples, localization))` different
+localisations that have their geospatial data included in this data
+package. The sample analysis includes different measurements including
+conductivity, temperature, pH-values and concentrations of different
+elements/molecules for the groundwater samples.
 
 The `water_samples` data set has `r ncol(water_samples)` variables and
 `r nrow(water_samples)` observations. For an overview of the variable
@@ -119,9 +142,13 @@ sf_samples |>
 
 ```
 
-##  selected_samples
+## selected_samples
 
-This dataset contains data from an analysis of groundwater in Kwale, Kenya. The data was collected three weeks in a row at 8 different locations. The sample analysis includes measurements of conductivity, temperature, pH-values and concentrations of different elements/molecules.
+This dataset contains data from an analysis of groundwater in Kwale,
+Kenya. The data was collected three weeks in a row at 8 different
+locations. The sample analysis includes measurements of conductivity,
+temperature, pH-values and concentrations of different
+elements/molecules.
 
 The `selected_samples` data set has `r ncol(selected_samples)` variables
 and `r nrow(selected_samples)` observations. For an overview of the
@@ -174,6 +201,13 @@ Data are available as
 citation("grdwtrsmpkwale")
 ```
 
-## Related References (TBD)
+## Related References
 
-
+[First step to understand the importance of new deep aquifer pumping
+regime in groundwater system in a developing country, Kwale,
+Kenya](http://meetingorganizer.copernicus.org/EGU2016/EGU2016-16969.pdf);
+Ferrer et al, Geophysical Research Abstracts, Vol. 18, EGU2016-16969,
+2016;
+<https://upgro.files.wordpress.com/2015/09/egu16_groforgood_v1.pdf>;
+UPC - The Departement of Civil Enginyering de la Universitat Politecnica
+de Catalunya GHS - Grupo de Hidrologia Subterranea

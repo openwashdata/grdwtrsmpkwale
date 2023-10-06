@@ -8,6 +8,7 @@
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![R-CMD-check](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
@@ -32,6 +33,19 @@ file from the table below.
 |:-----------------|:----------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|
 | water_samples    | [Download CSV](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/water_samples.csv)    | [Download XLSX](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/water_samples.xlsx)    |
 | selected_samples | [Download CSV](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/selected_samples.csv) | [Download XLSX](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/selected_samples.xlsx) |
+
+# Introduction
+
+This dataset contains results of two sampling campaigns conducted in
+Kwale County Kenya in March and June 2016 by GHS/UPC as part of the Gro
+for GooD project.[^1]
+
+Water samples from over 79 groundwater and 6 surface water (SW)
+locations were analysed for major ions, stable isotopes, selected trace
+constituents, electrical conductivity, nitrates, ammonia, pH, DO
+(Dissolved Oxygen), Eh (oxidation / reduction potential), Temperature,
+TOC (Total Organic Carbon) and field alkalinity. Most locations were
+sampled in both March (dry season) and June (wet season).
 
 # Data
 
@@ -2720,17 +2734,28 @@ Data are available as
 
     #> To cite package 'grdwtrsmpkwale' in publications use:
     #> 
-    #>   Zhong M, Loos S (????). _grdwtrsmpkwale: Groundwater analysis from
-    #>   2016 in Kwale, Kenya_. R package version 0.0.0.9000,
+    #>   Loos S, Zhong M, Hope R (????). _grdwtrsmpkwale: Groundwater analysis
+    #>   from 2016 in Kwale, Kenya_. R package version 0.0.0.9000,
     #>   <https://github.com/openwashdata/grdwtrsmpkwale>.
     #> 
     #> A BibTeX entry for LaTeX users is
     #> 
     #>   @Manual{,
     #>     title = {grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya},
-    #>     author = {Mian Zhong and Sebastian Camilo Loos},
+    #>     author = {Sebastian Camilo Loos and Mian Zhong and Rob Hope},
     #>     note = {R package version 0.0.0.9000},
     #>     url = {https://github.com/openwashdata/grdwtrsmpkwale},
     #>   }
 
-## Related References (TBD)
+## Related References
+
+[First step to understand the importance of new deep aquifer pumping
+regime in groundwater system in a developing country, Kwale,
+Kenya](http://meetingorganizer.copernicus.org/EGU2016/EGU2016-16969.pdf);
+Ferrer et al, Geophysical Research Abstracts, Vol. 18, EGU2016-16969,
+2016;
+<https://upgro.files.wordpress.com/2015/09/egu16_groforgood_v1.pdf>;
+UPC - The Departement of Civil Enginyering de la Universitat Politecnica
+de Catalunya GHS - Grupo de Hidrologia Subterranea
+
+[^1]: <https://metadata.bgs.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/50cdcbae-bc14-628b-e054-002128a47908>
