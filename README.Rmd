@@ -41,7 +41,7 @@ library(tmaptools)
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
 planning of water and solid waste management in Kwale, Kenya. This
 package includes water anlaysis data collected in 2016 combined with the
-geospatial data from the collection points.
+geospatial data from the collection points. The data is collected part of the project UPGro (Unlocking the Potential of Groundwater for the Poor) which aimed to improve the evidence and understanding of groundwater across Sub-Saharan Africa to help tackle poverty.
 
 ## Installation
 
@@ -113,8 +113,6 @@ names, see the following table.
 
 ```{r, eval=FALSE}
 water_samples
-
-
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -123,7 +121,7 @@ readr::read_csv("data-raw/dictionary.csv") |>
   dplyr::select(variable_name:error) |> 
   knitr::kable() |> 
   kableExtra::kable_styling() |> 
-  kableExtra::scroll_box()
+  kableExtra::scroll_box(height = "400px")
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -164,7 +162,7 @@ readr::read_csv("data-raw/dictionary.csv") |>
   dplyr::select(variable_name:error) |>  
   knitr::kable(show_col_types = FALSE) |> 
   kableExtra::kable_styling() |> 
-  kableExtra::scroll_box()
+  kableExtra::scroll_box(height = "400px")
 ```
 
 ## Example
@@ -203,11 +201,10 @@ citation("grdwtrsmpkwale")
 
 ## Related References
 
-[First step to understand the importance of new deep aquifer pumping
+[1] Ferrer et al, "[First step to understand the importance of new deep aquifer pumping
 regime in groundwater system in a developing country, Kwale,
-Kenya](http://meetingorganizer.copernicus.org/EGU2016/EGU2016-16969.pdf);
-Ferrer et al, Geophysical Research Abstracts, Vol. 18, EGU2016-16969,
-2016;
-<https://upgro.files.wordpress.com/2015/09/egu16_groforgood_v1.pdf>;
+Kenya](http://meetingorganizer.copernicus.org/EGU2016/EGU2016-16969.pdf)",
+Geophysical Research Abstracts, Vol. 18, EGU2016-16969,
+2016; Poster Avaiblable: <https://upgro.files.wordpress.com/2015/09/egu16_groforgood_v1.pdf>;
 UPC - The Departement of Civil Enginyering de la Universitat Politecnica
 de Catalunya GHS - Grupo de Hidrologia Subterranea

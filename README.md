@@ -14,7 +14,10 @@
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
 planning of water and solid waste management in Kwale, Kenya. This
 package includes water anlaysis data collected in 2016 combined with the
-geospatial data from the collection points.
+geospatial data from the collection points. The data is collected part
+of the project UPGro (Unlocking the Potential of Groundwater for the
+Poor) which aimed to improve the evidence and understanding of
+groundwater across Sub-Saharan Africa to help tackle poverty.
 
 ## Installation
 
@@ -73,24 +76,24 @@ an overview of the variable names, see the following table.
 water_samples
 ```
 
-<div style="border: 1px solid #ddd; padding: 5px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 variable_name
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 variable_type
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 description
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 unit_type
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 error
 </th>
 </tr>
@@ -1497,24 +1500,24 @@ For an overview of the variable names, see the following table.
 selected_samples
 ```
 
-<div style="border: 1px solid #ddd; padding: 5px; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 variable_name
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 variable_type
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 description
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 unit_type
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 error
 </th>
 </tr>
@@ -2749,11 +2752,12 @@ Data are available as
 
 ## Related References
 
-[First step to understand the importance of new deep aquifer pumping
-regime in groundwater system in a developing country, Kwale,
-Kenya](http://meetingorganizer.copernicus.org/EGU2016/EGU2016-16969.pdf);
-Ferrer et al, Geophysical Research Abstracts, Vol. 18, EGU2016-16969,
-2016;
+\[1\] Ferrer et al, “[First step to understand the importance of new
+deep aquifer pumping regime in groundwater system in a developing
+country, Kwale,
+Kenya](http://meetingorganizer.copernicus.org/EGU2016/EGU2016-16969.pdf)”,
+Geophysical Research Abstracts, Vol. 18, EGU2016-16969, 2016; Poster
+Avaiblable:
 <https://upgro.files.wordpress.com/2015/09/egu16_groforgood_v1.pdf>;
 UPC - The Departement of Civil Enginyering de la Universitat Politecnica
 de Catalunya GHS - Grupo de Hidrologia Subterranea
