@@ -1,6 +1,6 @@
 Package: grdwtrsmpkwale
 Title: Groundwater analysis from 2016 in Kwale, Kenya
-Version: 0.0.0.9000
+Version: 0.0.1
 Description: "The goal of `grdwtrsmpkwale` is to provide datasets for research and planning of water and solid waste management in Kwale, Kenya. This package includes water anlaysis data collected in 2016 combined with the geospatial data from the collection points."
 License: CC BY 4.0
 Encoding: UTF-8
@@ -19,3 +19,4 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Config/Needs/website: rmarkdown
+Date: 2023-10-16
