@@ -22,3 +22,5 @@ Date: 2023-10-16
 Language: en-GB
 X-schema.org-keywords: open data, washdata, groundwater, water quality, Kwale, Kenya
 Config/roxygen2/version: 8.0.0
+X-schema.org-spatialCoverage: Kwale, Kenya
+X-schema.org-temporalCoverage: 2016-03-01/2016-06-25
