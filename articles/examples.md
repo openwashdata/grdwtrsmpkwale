@@ -1,0 +1,6 @@
+# examples
+
+``` r
+
+library(grdwtrsmpkwale)
+```
