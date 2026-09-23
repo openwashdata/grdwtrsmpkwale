@@ -79,7 +79,7 @@ data/,water_samples.rda,Th,double,Thorium concentration in parts per billion (pp
 data/,water_samples.rda,U,double,Uranium concentration in parts per billion (ppb).,ppb,0.08 ppb
 data/,water_samples.rda,delta_O_18,double,The ratio of stable isotopes oxygen-18 (18O) and oxygen-16 (16O) as a measure of groundwater/mineral interactions.,NA,NA
 data/,water_samples.rda,delta_H_2,double,"δ2H, or delta deuterium, is a measure of the relative abundance of deuterium (a stable isotope of hydrogen) in a sample, often used in hydrology and environmental science to trace the origin and movement of water.",NA,NA
-data/,selected_samples.rda,code,character,,NA,LOD
+data/,selected_samples.rda,code,character,"Code of the sampling point: an abbreviation of the site name followed by the weekly sampling round (1 = 10 June, 2 = 18 June, 3 = 24 June 2016).",NA,NA
 data/,selected_samples.rda,date,dttm,Date the sample was taken.,NA,NA
 data/,selected_samples.rda,conductivity,double,Conductivity of the sample in (µS/cm),(µS/cm),NA
 data/,selected_samples.rda,T_avg,double,Average ambient temperature at the time of the sampling,°C,NA

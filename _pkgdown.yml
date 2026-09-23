@@ -1,10 +1,10 @@
 
-url: https://github.com/openwashdata/grdwtrsmpkwale
+url: https://openwashdata.github.io/grdwtrsmpkwale/
 template:
   bootstrap: 5
   includes:
     in_header: |
-      <script defer data-domain="openwashdata.github.io/grdwtrsmpkwale" src="https://plausible.io/js/script.js"></script>
+      <script defer data-domain="openwashdata.github.io" src="https://plausible.io/js/script.js"></script>
 
 home:
   links:
