@@ -1,44 +1,48 @@
-# -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.5.0
+# ------------------------------------------------
+# CITATION.cff file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# -----------------------------------------------------------
+# ------------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "grdwtrsmpkwale" in publications use:'
-type: software
+type: dataset
 license: CC-BY-4.0
 title: 'grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya'
-version: 0.0.0.9000
-abstract: '"The goal of `grdwtrsmpkwale` is to provide datasets for research and planning
+version: 0.0.1
+doi: 10.5281/zenodo.10016874
+abstract: The goal of grdwtrsmpkwale is to provide datasets for research and planning
   of water and solid waste management in Kwale, Kenya. This package includes water
-  anlaysis data collected in 2016 combined with the geospatial data from the collection
-  points."'
+  analysis data collected in 2016 combined with the geospatial data from the collection
+  points.
 authors:
-- family-names: Zhong
-  given-names: Mian
-  email: mzhong@ethz.ch
-  orcid: https://orcid.org/0009-0009-4546-7214
 - family-names: Loos
   given-names: Sebastian Camilo
   email: sloos@ethz.ch
   orcid: https://orcid.org/0000-0002-8830-1734
-repository-code: https://github.com/openwashdata/grdwtrsmpkwale
-url: https://github.com/openwashdata/grdwtrsmpkwale
-contact:
 - family-names: Zhong
   given-names: Mian
   email: mzhong@ethz.ch
   orcid: https://orcid.org/0009-0009-4546-7214
-references:
-- type: software
-  title: 'R: A Language and Environment for Statistical Computing'
-  notes: Depends
-  url: https://www.R-project.org/
-  authors:
-  - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2023'
-  institution:
-    name: R Foundation for Statistical Computing
-  version: '>= 2.10'
+- family-names: Hope
+  given-names: Rob
+repository-code: https://github.com/openwashdata/grdwtrsmpkwale
+url: https://github.com/openwashdata/grdwtrsmpkwale
+date-released: '2023-10-16'
+contact:
+- family-names: Loos
+  given-names: Sebastian Camilo
+  email: sloos@ethz.ch
+  orcid: https://orcid.org/0000-0002-8830-1734
+keywords:
+- open data
+- washdata
+- groundwater
+- water quality
+- Kwale
+- Kenya
+- groundwater-data
+- kenya
+- opendata
+- openwashdata
+- r
+

@@ -3,7 +3,7 @@
 #' @format A tibble with 24 rows and 69 variables
 #'
 #' \describe{
-#'   \item{code}{}
+#'   \item{code}{Code of the sampling point: an abbreviation of the site name followed by the weekly sampling round (1 = 10 June, 2 = 18 June, 3 = 24 June 2016).}
 #'   \item{date}{Date the sample was taken.}
 #'   \item{conductivity}{Conductivity of the sample in (µS/cm)}
 #'   \item{T_avg}{Average ambient temperature at the time of the sampling}
