@@ -9,6 +9,7 @@
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![R-CMD-check](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/grdwtrsmpkwale/actions/workflows/R-CMD-check.yaml)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10016874.svg)](https://zenodo.org/doi/10.5281/zenodo.10016874)
 <!-- badges: end -->
 
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
@@ -32,9 +33,9 @@ devtools::install_github("openwashdata/grdwtrsmpkwale")
 Alternatively, you can download the individual datasets as CSV or XLSX
 file from the table below.
 
-| dataset          | CSV                                                                                                       | XLSX                                                                                                        |
-|:-----------------|:----------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|
-| water_samples    | [Download CSV](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/water_samples.csv)    | [Download XLSX](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/water_samples.xlsx)    |
+| dataset | CSV | XLSX |
+|:---|:---|:---|
+| water_samples | [Download CSV](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/water_samples.csv) | [Download XLSX](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/water_samples.xlsx) |
 | selected_samples | [Download CSV](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/selected_samples.csv) | [Download XLSX](https://github.com/openwashdata/grdwtrsmpkwale/raw/main/inst/extdata/selected_samples.xlsx) |
 
 # Introduction
@@ -79,1399 +80,2376 @@ water_samples
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
+
 <thead>
+
 <tr>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 variable_name
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 variable_type
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 description
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 unit_type
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 error
 </th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr>
+
 <td style="text-align:left;">
+
 localization
 </td>
+
 <td style="text-align:left;">
+
 character
 </td>
+
 <td style="text-align:left;">
+
 Name of the localization where the sample was taken.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 geology
 </td>
+
 <td style="text-align:left;">
+
 character
 </td>
+
 <td style="text-align:left;">
+
 Composition of the ground.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 utm_x
 </td>
+
 <td style="text-align:left;">
+
 character
 </td>
+
 <td style="text-align:left;">
+
 Geospatial data of the water sampling locations. The geographic
 coordinate system ‘Arc 1960 / UTM zone 37S’ (EPSG:21037) which is used
 for the areas of Kenya and Tanzania - south of equator and east of 36°E.
 </td>
+
 <td style="text-align:left;">
+
 Arc 1960
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 utm_y
 </td>
+
 <td style="text-align:left;">
+
 character
 </td>
+
 <td style="text-align:left;">
+
 Geospatial data of the water sampling locations. The geographic
 coordinate system ‘Arc 1960 / UTM zone 37S’ (EPSG:21037) which is used
 for the areas of Kenya and Tanzania - south of equator and east of 36°E.
 </td>
+
 <td style="text-align:left;">
+
 Arc 1960
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 date
 </td>
+
 <td style="text-align:left;">
+
 dttm
 </td>
+
 <td style="text-align:left;">
+
 Date the sample was taken.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 conductivity
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Conductivity of the sample in (µS/cm)
 </td>
+
 <td style="text-align:left;">
+
 (µS/cm)
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 T_avg
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Average ambient temperature at the time of the sampling
 </td>
+
 <td style="text-align:left;">
+
 °C
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 pH
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Acidity/basicity of the sample using the pH value.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 TOC
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Total organic carbon (TOC) is an analytical parameter representing the
 concentration of organic carbon in a sample.
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 alkalinity
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Alkalinity of the sample as mg of bicarbonate (HCO3) per liter
 (mg_HCO3/L).
 </td>
+
 <td style="text-align:left;">
+
 as mg/L HCO3
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 DO
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Dissolved oxygen (DO) levels in environmental water depend on the
 physiochemical and biochemical activities in water body and it is an
 important useful in pollution and waste treatment process control.
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 ORP
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Oxidation reduction potential (ORP) in (mV).
 </td>
+
 <td style="text-align:left;">
+
 mV
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 eH
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Redox potential (eH) in (mV).
 </td>
+
 <td style="text-align:left;">
+
 mV
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 NH4
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Ammonium concentration in (mg/L).
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cl
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Chlorine concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.042 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 SO4
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Sulfate concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.026mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 NO3
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Nitrate concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.005mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 PO4
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Phosphate concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0,008 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Br
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Bromine concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.004mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 F
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Fluorine concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.024mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ca
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Calcium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Mg
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Magnesium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Na
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Sodium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.1 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 K
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Potassium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.1 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Fe
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Iron concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Si
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Silicon concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.02 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Al
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Aluminum concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 S
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Sulfur concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 P
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Phosphorus concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.1 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Li
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lithium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Be
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Beryllium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 B
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Boron concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sc
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Scandium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ti
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Titanium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 V
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Vanadium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Chromium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Mn
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Manganese concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Co
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cobalt concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ni
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Nickel concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cu
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Copper concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Zn
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Zinc concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ga
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Gallium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ge
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Germanium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 As
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Arsenic concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Se
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Selenium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Rb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Rubidium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Strontium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Y
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Yttrium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Zr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Zirconium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Nb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Niobium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Mo
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Molybdenum concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cd
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cadmium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sn
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Tin concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Antimony concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cs
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cesium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ba
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Barium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 La
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lanthanum concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ce
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cerium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Pr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Praseodymium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Nd
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Neodymium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sm
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Samarium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Eu
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Europium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Gd
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Gadolinium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Tb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Terbium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Dy
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Dysprosium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ho
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Holmium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Er
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Erbium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Tm
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Thulium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Yb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Ytterbium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Lu
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lutetium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Hf
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Hafnium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ta
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Tantalum concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 W
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Wolfram concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Tl
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Thallium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Pb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lead concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Bi
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Bismuth concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Th
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Thorium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 U
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Uranium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 delta_O_18
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 The ratio of stable isotopes oxygen-18 (18O) and oxygen-16 (16O) as a
 measure of groundwater/mineral interactions.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 delta_H_2
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 δ2H, or delta deuterium, is a measure of the relative abundance of
 deuterium (a stable isotope of hydrogen) in a sample, often used in
 hydrology and environmental science to trace the origin and movement of
 water.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 </tbody>
+
 </table>
 
 </div>
@@ -1480,6 +2458,7 @@ NA
 
 <img src="man/figures/README-fig-location-plot-1.png" alt="Locations of sampling spots" width="100%" />
 <p class="caption">
+
 Locations of sampling spots
 </p>
 
@@ -1503,1200 +2482,2046 @@ selected_samples
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
+
 <thead>
+
 <tr>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 variable_name
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 variable_type
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 description
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 unit_type
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 error
 </th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr>
+
 <td style="text-align:left;">
+
 code
 </td>
+
 <td style="text-align:left;">
+
 character
 </td>
+
 <td style="text-align:left;">
+
+Code of the sampling point: an abbreviation of the site name followed by
+the weekly sampling round (1 = 10 June, 2 = 18 June, 3 = 24 June 2016).
+</td>
+
+<td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
-<td style="text-align:left;">
-LOD
-</td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 date
 </td>
+
 <td style="text-align:left;">
+
 dttm
 </td>
+
 <td style="text-align:left;">
+
 Date the sample was taken.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 conductivity
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Conductivity of the sample in (µS/cm)
 </td>
+
 <td style="text-align:left;">
+
 (µS/cm)
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 T_avg
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Average ambient temperature at the time of the sampling
 </td>
+
 <td style="text-align:left;">
+
 °C
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 pH
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Acidity/basicity of the sample using the pH value.
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 <td style="text-align:left;">
+
 NA
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cl
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Chlorine concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.042 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 SO4
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Sulfate concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.026mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 NO3
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Nitrate concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.005mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 PO4
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Phosphate concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0,008 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Br
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Bromine concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.019mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 F
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Fluorine concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.024mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ca
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Calcium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Mg
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Magnesium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Na
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Sodium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.1 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 K
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Potassium concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.1 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Fe
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Iron concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Si
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Silicon concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.02 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Al
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Aluminum concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 S
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Sulfur concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.05 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 P
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Phosphorus concentration in (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 (mg/L)
 </td>
+
 <td style="text-align:left;">
+
 0.1 mg/L
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Li
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lithium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Be
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Beryllium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 B
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Boron concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sc
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Scandium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ti
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Titanium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 V
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Vanadium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Chromium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Mn
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Manganese concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Co
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cobalt concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ni
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Nickel concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cu
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Copper concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Zn
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Zinc concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ga
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Gallium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ge
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Germanium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 As
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Arsenic concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Se
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Selenium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Rb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Rubidium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Strontium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Y
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Yttrium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Zr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Zirconium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Nb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Niobium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Mo
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Molybdenum concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cd
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cadmium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sn
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Tin concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Antimony concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Cs
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cesium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ba
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Barium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 La
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lanthanum concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ce
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Cerium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Pr
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Praseodymium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Nd
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Neodymium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Sm
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Samarium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Eu
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Europium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Gd
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Gadolinium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Tb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Terbium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Dy
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Dysprosium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ho
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Holmium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Er
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Erbium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Tm
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Thulium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Yb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Ytterbium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Lu
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lutetium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Hf
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Hafnium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Ta
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Tantalum concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 W
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Wolfram concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Tl
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Thallium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Pb
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Lead concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Bi
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Bismuth concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 Th
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Thorium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 U
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 Uranium concentration in parts per billion (ppb).
 </td>
+
 <td style="text-align:left;">
+
 ppb
 </td>
+
 <td style="text-align:left;">
+
 0.08 ppb
 </td>
+
 </tr>
+
 </tbody>
+
 </table>
 
 </div>
@@ -2723,6 +4548,7 @@ tm_shape(sf_samples) +
 
 <img src="man/figures/screenshot-map-sampling-spots.png" alt="Screenshot of an interactive map with OpenStreetMap layer." width="100%" />
 <p class="caption">
+
 Screenshot of an interactive map with OpenStreetMap layer.
 </p>
 
@@ -2737,17 +4563,22 @@ Data are available as
 
     #> To cite package 'grdwtrsmpkwale' in publications use:
     #> 
-    #>   Loos S, Zhong M, Hope R (????). _grdwtrsmpkwale: Groundwater analysis
-    #>   from 2016 in Kwale, Kenya_. R package version 0.0.0.9000,
+    #>   Loos S, Zhong M, Hope R (2023). "grdwtrsmpkwale: Groundwater analysis
+    #>   from 2016 in Kwale, Kenya." doi:10.5281/zenodo.10016874
+    #>   <https://doi.org/10.5281/zenodo.10016874>.
     #>   <https://github.com/openwashdata/grdwtrsmpkwale>.
     #> 
     #> A BibTeX entry for LaTeX users is
     #> 
-    #>   @Manual{,
+    #>   @Misc{loos_etall:2023,
     #>     title = {grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya},
     #>     author = {Sebastian Camilo Loos and Mian Zhong and Rob Hope},
-    #>     note = {R package version 0.0.0.9000},
+    #>     year = {2023},
+    #>     doi = {10.5281/zenodo.10016874},
     #>     url = {https://github.com/openwashdata/grdwtrsmpkwale},
+    #>     abstract = {The goal of grdwtrsmpkwale is to provide datasets for research and planning of water and solid waste management in Kwale, Kenya. This package includes water analysis data collected in 2016 combined with the geospatial data from the collection points.},
+    #>     keywords = {open data,washdata,groundwater,water quality,Kwale,Kenya,groundwater-data,kenya,opendata,openwashdata,r},
+    #>     version = {0.0.1},
     #>   }
 
 ## Related References
