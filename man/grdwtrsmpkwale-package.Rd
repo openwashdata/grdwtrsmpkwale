@@ -6,7 +6,7 @@
 \alias{grdwtrsmpkwale-package}
 \title{grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya}
 \description{
-"The goal of `grdwtrsmpkwale` is to provide datasets for research and planning of water and solid waste management in Kwale, Kenya. This package includes water anlaysis data collected in 2016 combined with the geospatial data from the collection points."
+The goal of grdwtrsmpkwale is to provide datasets for research and planning of water and solid waste management in Kwale, Kenya. This package includes water analysis data collected in 2016 combined with the geospatial data from the collection points.
 }
 \seealso{
 Useful links:
@@ -17,11 +17,13 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Mian Zhong \email{mzhong@ethz.ch} (\href{https://orcid.org/0009-0009-4546-7214}{ORCID})
+\strong{Maintainer}: Sebastian Camilo Loos \email{sloos@ethz.ch} (\href{https://orcid.org/0000-0002-8830-1734}{ORCID})
 
 Authors:
 \itemize{
   \item Sebastian Camilo Loos \email{sloos@ethz.ch} (\href{https://orcid.org/0000-0002-8830-1734}{ORCID})
+  \item Mian Zhong \email{mzhong@ethz.ch} (\href{https://orcid.org/0009-0009-4546-7214}{ORCID})
+  \item Rob Hope
 }
 
 }
