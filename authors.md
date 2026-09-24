@@ -2,26 +2,29 @@
 
 ## Authors
 
-- **Sebastian Camilo Loos**. Author, maintainer.
+- **Sebastian Camilo Loos**. Author.
   [](https://orcid.org/0000-0002-8830-1734)
 
 - **Mian Zhong**. Author. [](https://orcid.org/0009-0009-4546-7214)
 
 - **Rob Hope**. Author.
 
+- **Lars Schöbitz**. Maintainer.
+  [](https://orcid.org/0000-0003-2196-5015)
+
 ## Citation
 
 Source:
 [`inst/CITATION`](https://github.com/openwashdata/grdwtrsmpkwale/blob/main/inst/CITATION)
 
-Loos S, Zhong M, Hope R (2023). “grdwtrsmpkwale: Groundwater analysis
-from 2016 in Kwale, Kenya.”
+Loos S, Zhong M, Hope R, Schöbitz L (2023). “grdwtrsmpkwale: Groundwater
+analysis from 2016 in Kwale, Kenya.”
 [doi:10.5281/zenodo.10016874](https://doi.org/10.5281/zenodo.10016874).
 <https://github.com/openwashdata/grdwtrsmpkwale>.
 
     @Misc{loos_etall:2023,
       title = {grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya},
-      author = {Sebastian Camilo Loos and Mian Zhong and Rob Hope},
+      author = {Sebastian Camilo Loos and Mian Zhong and Rob Hope and Lars Schöbitz},
       year = {2023},
       doi = {10.5281/zenodo.10016874},
       url = {https://github.com/openwashdata/grdwtrsmpkwale},

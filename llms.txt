@@ -280,8 +280,9 @@ Data are available as
 ``` R
 #> To cite package 'grdwtrsmpkwale' in publications use:
 #> 
-#>   Loos S, Zhong M, Hope R (2023). "grdwtrsmpkwale: Groundwater analysis
-#>   from 2016 in Kwale, Kenya." doi:10.5281/zenodo.10016874
+#>   Loos S, Zhong M, Hope R, Schöbitz L (2023). "grdwtrsmpkwale:
+#>   Groundwater analysis from 2016 in Kwale, Kenya."
+#>   doi:10.5281/zenodo.10016874
 #>   <https://doi.org/10.5281/zenodo.10016874>.
 #>   <https://github.com/openwashdata/grdwtrsmpkwale>.
 #> 
@@ -289,7 +290,7 @@ Data are available as
 #> 
 #>   @Misc{loos_etall:2023,
 #>     title = {grdwtrsmpkwale: Groundwater analysis from 2016 in Kwale, Kenya},
-#>     author = {Sebastian Camilo Loos and Mian Zhong and Rob Hope},
+#>     author = {Sebastian Camilo Loos and Mian Zhong and Rob Hope and Lars Schöbitz},
 #>     year = {2023},
 #>     doi = {10.5281/zenodo.10016874},
 #>     url = {https://github.com/openwashdata/grdwtrsmpkwale},
