@@ -39,6 +39,8 @@ library(tmaptools)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10016874.svg)](https://zenodo.org/doi/10.5281/zenodo.10016874)
 <!-- badges: end -->
 
+A data package published by [openwashdata](https://openwashdata.org).
+
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
 planning of water and solid waste management in Kwale, Kenya. This
 package includes water anlaysis data collected in 2016 combined with the
