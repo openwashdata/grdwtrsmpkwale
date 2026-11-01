@@ -2,8 +2,6 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10016874.svg)](https://zenodo.org/doi/10.5281/zenodo.10016874)
 
-A data package published by [openwashdata](https://openwashdata.org).
-
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
 planning of water and solid waste management in Kwale, Kenya. This
 package includes water anlaysis data collected in 2016 combined with the
@@ -313,5 +311,7 @@ Avaiblable:
 <https://upgro.files.wordpress.com/2015/09/egu16_groforgood_v1.pdf>;
 UPC - The Departement of Civil Enginyering de la Universitat Politecnica
 de Catalunya GHS - Grupo de Hidrologia Subterranea
+
+Published by openwashdata, <https://openwashdata.org>.
 
 [^1]: <https://metadata.bgs.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/50cdcbae-bc14-628b-e054-002128a47908>
