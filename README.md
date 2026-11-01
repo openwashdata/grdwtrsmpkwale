@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# grdwtrsmpkwale
+# grdwtrsmpkwale <a href="https://openwashdata.org"><img src="man/figures/logo.png" align="right" width="120" alt="openwashdata" /></a>
 
 <!-- badges: start -->
 
@@ -11,8 +11,6 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10016874.svg)](https://zenodo.org/doi/10.5281/zenodo.10016874)
 <!-- badges: end -->
-
-A data package published by [openwashdata](https://openwashdata.org).
 
 The goal of `grdwtrsmpkwale` is to provide datasets for research and
 planning of water and solid waste management in Kwale, Kenya. This
@@ -4597,3 +4595,5 @@ UPC - The Departement of Civil Enginyering de la Universitat Politecnica
 de Catalunya GHS - Grupo de Hidrologia Subterranea
 
 [^1]: <https://metadata.bgs.ac.uk/geonetwork/srv/eng/catalog.search#/metadata/50cdcbae-bc14-628b-e054-002128a47908>
+
+Published by openwashdata, <https://openwashdata.org>.
